@@ -1,6 +1,6 @@
 <html>
                <head>
-                 <base href="file:///Users/samuel/Dropbox/Projects/R/corporates/Tokopedia/IntroPython/">
+                 <base href="file:///Users/samuel/Dropbox/Projects/R/corporates/Tokopedia/1_IntroPython/">
                  <meta charset="UTF-8">
                  <meta name = "viewport" content = "width = device-width, initial-scale = 1, maximum-scale = 1">
                  <style id="style">
@@ -1128,6 +1128,30 @@ The following NEW packages will be INSTALLED:
 conda list
 </code>
       </pre><p data-line="111">You will notice that conda now return all packages in your root environment, instead of the ones in your <code>tokopedia</code> environment. This may mean a different version of Python, a different version of <code>pandas</code> and <code>numpy</code>.</p>
-<p data-line="113">Congratulations! You’ve taken the “hard choice” to set up environments for your project. This form of isolation helps you run several projects on your machine, each having its own version of packages and dependencies. Your project collaborators are going to love you for that, and your future self will appreciate you take the extra effort to “do things right” at the beginning.</p>
+<h2 id="Notebook-Kernels" data-line="113">Notebook Kernels</h2>
+<p data-line="114">At this point, you may start up Jupyter Lab and realize that your <code>tokopedia</code> environment is not being used. This is because the corresponding package (<code>notebook</code>) is installed in your root environment, and has no access to the Python modules in your other environments.</p>
+<p data-line="116">We can fix this with the use of two additional packages.</p>
+<p data-line="118">First, in the root environment where you typically launch JupyterLab (or Jupyter Notebook) from, install <code>nb_conda_kernels</code>. This is the <strong>environment</strong> that contains the <code>notebook</code> package.</p>
+<pre class="code CodeMirror" data-line="120">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="bash">conda install nb_conda_kernels
+</code>
+      </pre><p data-line="124">Then, activate your <code>tokopedia</code> environment and install the <code>ipykernel</code> into this environment.</p>
+<p data-line="126">Alternatively, you can use the <code>-n</code> flag and pass in the name of the environment to which a package is installed to.</p>
+<p data-line="128">The <code>ipykernel</code> package allow us to create a new kernel with a specified name (by convention, I use the same name as my environment):</p>
+<pre class="code CodeMirror" data-line="130">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span></span>
+        <code class="bash">conda install -n tokopedia ipykernel
+ipython kernel install --name=tokopedia  
+
+# Success!
+Installed kernelspec tokopedia in /usr/local/share/jupyter/kernels/tokopedia
+</code>
+      </pre><p data-line="138">When this is done, launch JupyterLab (<code>jupyter lab</code>) and you’ll see the kernel as an option in your JupyterLab interface. You’re all ready to go!</p>
+<p data-line="140"><img src="/assets/kernels.png" alt="" /></p>
+<h2 id="Final-Words" data-line="142">Final Words</h2>
+<p data-line="144">Congratulations! You’ve taken the “hard choice” to set up environments for your project. This form of isolation helps you run several projects on your machine, each having its own version of packages and dependencies. Your project collaborators are going to love you for that, and your future self will appreciate you take the extra effort to “do things right” at the beginning.</p>
 </body>
             </html>

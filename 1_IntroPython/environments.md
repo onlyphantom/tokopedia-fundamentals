@@ -111,4 +111,35 @@ conda list
 ```
 You will notice that conda now return all packages in your root environment, instead of the ones in your `tokopedia` environment. This may mean a different version of Python, a different version of `pandas` and `numpy`. 
 
+## Notebook Kernels 
+At this point, you may start up Jupyter Lab and realize that your `tokopedia` environment is not being used. This is because the corresponding package (`notebook`) is installed in your root environment, and has no access to the Python modules in your other environments. 
+
+We can fix this with the use of two additional packages. 
+
+First, in the root environment where you typically launch JupyterLab (or Jupyter Notebook) from, install `nb_conda_kernels`. This is the **environment** that contains the `notebook` package.
+
+```bash
+conda install nb_conda_kernels
+```
+
+Then, activate your `tokopedia` environment and install the `ipykernel` into this environment.
+
+Alternatively, you can use the `-n` flag and pass in the name of the environment to which a package is installed to.
+
+The `ipykernel` package allow us to create a new kernel with a specified name (by convention, I use the same name as my environment):
+
+```bash
+conda install -n tokopedia ipykernel
+ipython kernel install --name=tokopedia  
+
+# Success!
+Installed kernelspec tokopedia in /usr/local/share/jupyter/kernels/tokopedia
+```
+
+When this is done, launch JupyterLab (`jupyter lab`) and you'll see the kernel as an option in your JupyterLab interface. You're all ready to go!
+
+![](/assets/kernels.png)
+
+## Final Words
+
 Congratulations! You've taken the "hard choice" to set up environments for your project. This form of isolation helps you run several projects on your machine, each having its own version of packages and dependencies. Your project collaborators are going to love you for that, and your future self will appreciate you take the extra effort to "do things right" at the beginning.
