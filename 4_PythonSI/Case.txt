@@ -1,0 +1,32 @@
+Case :
+Students can formulate a hypothesis testing from the example taught.
+
+-----------Hypothesis testing------------
+
+1. Using "tokped_hp.csv" data. Based on the data, we want to find out whether
+the average price of mobile phones with Apple's trademark on Batam has a 
+significant difference in the price of mobile phones with Apple's trademark
+in all locations.
+
+2. [Exercise] Based on the data "tokped_hp.csv" the student is asked to make 
+a hypothesis regarding the average price of mobile phones with the Samsung 
+trademark on Batam has a significant difference in the price of mobile phones
+with trademarks the same in all locations.
+
+
+-------Z-score-------
+
+1. For example, from all cellphone sellers on an e-commerce has average
+sales of 80 transactions per day with a standard deviation for 5 transactions. 
+From the transaction if the average transaction is done by sellers of more 
+than 80 transactions per day or not far away significant than 80 transactions 
+will get a reward in the form of a "trusted seller".
+Let say there is one company named "Elektrosell" that has 32 branch office
+which sells celphone. They have average sales per day about 74 transactions 
+per day, whether the "Elektrosell" will get a reward?
+
+From the case, we can formulate what is the average sales
+from "Elektrosell" differed statistically significantly from the mean
+mobile phone sales from the population?
+
+
